@@ -11,7 +11,6 @@
   "scripts": {
     "start": "node cli.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "node prepare.js",
     "prepublishOnly": "npm test",
     "postinstall": "node -e \"console.log('\\n\\u001b[36mThank you for installing Codex CLI!\\u001b[0m\\n\\u001b[33mRun \\u001b[0m\\u001b[32mcodex-setup\\u001b[0m\\u001b[33m to configure your API keys or\\u001b[0m\\n\\u001b[32mcodex config\\u001b[0m\\u001b[33m if you already have a config file.\\u001b[0m\\n');\""
   },
