@@ -1,0 +1,55 @@
+{
+  "name": "codex-cli",
+  "version": "1.0.0",
+  "description": "Your AI Dev Companion - A powerful CLI tool for developers",
+  "main": "cli.js",
+  "bin": {
+    "codex": "./cli.js",
+    "ai": "./cli.js",
+    "codex-setup": "./codex-setup.js"
+  },
+  "scripts": {
+    "start": "node cli.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "node prepare.js",
+    "prepublishOnly": "npm test",
+    "postinstall": "node -e \"console.log('\\n\\u001b[36mThank you for installing Codex CLI!\\u001b[0m\\n\\u001b[33mRun \\u001b[0m\\u001b[32mcodex-setup\\u001b[0m\\u001b[33m to configure your API keys or\\u001b[0m\\n\\u001b[32mcodex config\\u001b[0m\\u001b[33m if you already have a config file.\\u001b[0m\\n');\""
+  },
+  "keywords": [
+    "ai",
+    "cli",
+    "developer",
+    "coding",
+    "assistant",
+    "openai",
+    "gemini"
+  ],
+  "author": "Adarsh L K",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.2",
+    "cli-table3": "^0.6.5",
+    "commander": "^11.1.0",
+    "dotenv": "^16.3.1",
+    "figlet": "^1.7.0",
+    "highlight.js": "^11.11.1",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adarshlkdev/Codex-CLI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adarshlkdev/Codex-CLI/issues"
+  },
+  "homepage": "https://github.com/adarshlkdev/Codex-CLI#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
