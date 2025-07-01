@@ -1,4 +1,4 @@
-# 🚀 Codex CLI - Your AI Dev Companion
+# 🚀 AI Codex CLI - Your AI Dev Companion
 
 A powerful command-line interface that brings AI assistance directly to your terminal. Get instant help with coding concepts, debugging, code generation, and more!
 
@@ -19,7 +19,7 @@ A powerful command-line interface that brings AI assistance directly to your ter
 Install the package globally to use it as a command-line tool:
 
 ```bash
-npm install -g codex-cli
+npm install -g ai-codex-cli
 ```
 
 After installation, you can use the tool with either `codex` or `ai` commands:
@@ -35,7 +35,7 @@ ai explain "async/await in JavaScript"
 To use it within a project:
 
 ```bash
-npm install codex-cli
+npm install ai-codex-cli
 ```
 
 ### Set Up Your API Keys
@@ -50,11 +50,10 @@ Or manually create a `.env` file in your home directory:
 
 ```env
 # Choose your preferred AI provider
-AI_PROVIDER=gemini  # or openai
+AI_PROVIDER=gemini  
 
 # Add your API keys
 GEMINI_API_KEY=your_gemini_api_key_here
-OPENAI_API_KEY=your_openai_api_key_here
 
 # Optional: GitHub token for sharing gists
 GITHUB_TOKEN=your_github_token_here
@@ -66,8 +65,8 @@ If you're developing or contributing:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/codex-cli.git
-   cd codex-cli
+   git clone https://github.com/adarshlkdev/Codex-CLI.git
+   cd Codex-CLI
    ```
 
 2. **Install dependencies**
@@ -180,7 +179,7 @@ AI_PROVIDER=gemini  # or openai
 ## 📁 Project Structure
 
 ```
-codex-cli/
+ai-codex-cli/
 ├── cli.js              # Main entry point
 ├── commands/           # Command implementations
 │   ├── ask.js         # Ask questions
