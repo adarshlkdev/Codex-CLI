@@ -23,12 +23,20 @@ const titleText = figlet.textSync('CODEX CLI', {
 });
 
 console.log(
-  boxen(chalk.cyan(titleText) + '\n\n' + chalk.blue('🚀 Your AI Dev Companion'), {
-    padding: 1,
-    margin: 1,
-    borderColor: 'cyan',
-    borderStyle: 'round'
-  })
+  boxen(
+    chalk.cyan(titleText) + 
+    '\n\n' + chalk.blue('🚀 Your AI Dev Companion') + 
+    '\n' + chalk.yellow('Created by Adarsh'),
+    {
+      padding: 1,
+      margin: 1,
+      borderColor: 'cyan',
+      borderStyle: 'round',
+      textAlignment: 'center',
+      title: chalk.bold.cyan('Welcome to'),
+      titleAlignment: 'center'
+    }
+  )
 );
 
 program

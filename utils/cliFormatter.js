@@ -28,19 +28,6 @@ function formatHelpOutput(program) {
   
   const table = formatTable(headers, rows);
   
-  // Create a header box
-  const header = boxen(
-    chalk.cyan('🚀 Your AI Dev Companion on the Command Line'),
-    {
-      padding: 1,
-      margin: { top: 1, bottom: 0 },
-      borderColor: 'cyan',
-      borderStyle: 'round',
-      title: chalk.bold.cyan('CODEX CLI'),
-      titleAlignment: 'center'
-    }
-  );
-  
   // Footer with tips
   const footer = boxen(
     chalk.gray(`Tips:
@@ -57,7 +44,7 @@ function formatHelpOutput(program) {
     }
   );
   
-  return `${header}\n\n${table}\n\n${footer}`;
+  return `${table}\n\n${footer}`;
 }
 
 module.exports = { formatHelpOutput };

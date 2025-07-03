@@ -12,16 +12,21 @@ const homedir = os.homedir();
 const envFilePath = path.join(homedir, '.env.codex');
 
 async function setupConfig() {
-  console.log(boxen(chalk.cyan('Codex CLI Setup') + '\n\n' + chalk.blue('Configure your AI providers'), {
-    padding: 1,
-    margin: 1,
-    borderColor: 'cyan',
-    borderStyle: 'round'
-  }));
+  console.log(boxen(
+    chalk.cyan('Codex CLI Setup') + 
+    '\n\n' + chalk.blue('Configure your AI providers') + 
+    '\n' + chalk.yellow('Created by Adarsh'),
+    {
+      padding: 1,
+      margin: 1,
+      borderColor: 'cyan',
+      borderStyle: 'round'
+    }
+  ));
 
   const providerChoices = [
-    { name: 'OpenAI (GPT models)', value: 'openai' },
     { name: 'Google Gemini', value: 'gemini' },
+    { name: 'OpenAI (GPT models)', value: 'openai' },
     { name: 'Both providers', value: 'both' },
   ];
 
