@@ -59,88 +59,68 @@ GEMINI_API_KEY=your_gemini_api_key_here
 GITHUB_TOKEN=your_github_token_here
 ```
 
-### For Developers
-
-If you're developing or contributing:
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/adarshlkdev/Codex-CLI.git
-   cd Codex-CLI
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Link for local development**
-   ```bash
-   npm link
-   ```
-
 ## 🎯 Commands
 
 ### Core Commands
 
 ```bash
 # Explain programming concepts
-ai explain "async/await in JavaScript"
-ai explain "Docker containers"
+codex explain "async/awcodext in JavaScript"
+codex explain "Docker containers"
 
 # Debug errors and get solutions
-ai debug "TypeError: Cannot read property 'length' of undefined"
-ai debug "CORS error in Express.js"
+codex debug "TypeError: Cannot read property 'length' of undefined"
+codex debug "CORS error in Express.js"
 
 # Generate code snippets
-ai generate "React login form with validation"
-ai generate "Python function to parse CSV files"
+codex generate "React login form with validation"
+codex generate "Python function to parse CSV files"
 
 # Ask any programming question
-ai ask "What's the difference between let and const?"
-ai ask "How to optimize SQL queries?"
+codex ask "What's the difference between let and const?"
+codex ask "How to optimize SQL queries?"
 
 # Interactive chat mode
-ai chat
+codex chat
 ```
 
 ### Utility Commands
 
 ```bash
 # Save last response to file
-ai save my-solution.md
+codex save my-solution.md
 
 # View command history
-ai history
+codex history
 
 # Share last response to GitHub Gist
-ai share
+codex share
 
 # Configure settings
-ai config
+codex config
 ```
 
 ## 🚀 Getting Started
 
 1. **First, test your setup**:
    ```bash
-   ai config
+   codex config
    # Choose "Test API Connection"
    ```
 
 2. **Try explaining a concept**:
    ```bash
-   ai explain "REST API"
+   codex explain "REST API"
    ```
 
 3. **Generate some code**:
    ```bash
-   ai generate "Express.js hello world server"
+   codex generate "Express.js hello world server"
    ```
 
 4. **Start an interactive chat**:
    ```bash
-   ai chat
+   codex chat
    ```
 
 ## 🔧 Configuration
@@ -150,7 +130,7 @@ ai config
 You can easily switch between OpenAI and Gemini:
 
 ```bash
-ai config
+codex config
 # Choose "Switch AI Provider"
 ```
 
@@ -176,35 +156,12 @@ AI_PROVIDER=gemini  # or openai
 2. Create a token with `gist` permissions
 3. Add it to your `.env` file as `GITHUB_TOKEN`
 
-## 📁 Project Structure
-
-```
-ai-codex-cli/
-├── cli.js              # Main entry point
-├── commands/           # Command implementations
-│   ├── ask.js         # Ask questions
-│   ├── chat.js        # Interactive chat
-│   ├── config.js      # Configuration
-│   ├── debug.js       # Debug assistance
-│   ├── explain.js     # Concept explanations
-│   ├── generate.js    # Code generation
-│   ├── history.js     # Command history
-│   ├── save.js        # Save responses
-│   └── share.js       # Share to GitHub
-├── services/
-│   └── aiService.js   # AI provider integration
-├── utils/
-│   └── logger.js      # History and response logging
-├── .env               # Environment configuration
-├── package.json
-└── README.md
-```
 
 ## 🎨 Examples
 
 ### Explaining Concepts
 ```bash
-$ ai explain "GraphQL vs REST"
+$ codex explain "GraphQL vs REST"
 
 🤖 Explaining: GraphQL vs REST
 
@@ -216,7 +173,7 @@ GraphQL and REST are both approaches for building APIs, but they differ signific
 
 ### Debugging Errors
 ```bash
-$ ai debug "Module not found error in Node.js"
+$ codex debug "Module not found error in Node.js"
 
 🐛 Debugging Error: Module not found error in Node.js
 
@@ -228,7 +185,7 @@ This error typically occurs when Node.js cannot locate a module...
 
 ### Code Generation
 ```bash
-$ ai generate "Python function to validate email addresses"
+$ codex generate "Python function to validate email addresses"
 
 ⚡ Generating Code: Python function to validate email addresses
 
@@ -245,7 +202,7 @@ def validate_email(email):
 
 ### Interactive Chat
 ```bash
-$ ai chat
+$ codex chat
 
 💬 Interactive Chat Mode
 Type "exit" or "quit" to end the chat session
@@ -276,7 +233,7 @@ MIT License - feel free to use this project for personal or commercial purposes.
 
 1. **"No valid AI provider configured"**
    - Check your `.env` file has the correct API keys
-   - Run `ai config` to test your connection
+   - Run `codex config` to test your connection
 
 2. **"Module not found" errors**
    - Run `npm install` to install dependencies
@@ -290,10 +247,10 @@ MIT License - feel free to use this project for personal or commercial purposes.
 
 ### Getting Help
 
-- Use `ai --help` for command list
-- Use `ai config` to test your setup
+- Use `codex --help` for command list
+- Use `codex config` to test your setup
 - Check the `.env` file for proper API key configuration
-- Review command history with `ai history`
+- Review command history with `codex history`
 
 ---
 
