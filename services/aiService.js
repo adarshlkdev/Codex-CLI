@@ -52,59 +52,58 @@ class AIService {
   }
 
   async askGemini(prompt) {
-    try {
-      // Using Gemini 1.5 Flash (free model) with correct API endpoint
-      const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${this.geminiKey}`,
-        {
-          contents: [{
-            parts: [{
-              text: `You are a helpful AI programming assistant. Provide clear, concise, and practical answers to programming questions. Format code with proper syntax highlighting when applicable.\n\n${prompt}`
-            }]
-          }],
-          generationConfig: {
-            temperature: 0.7,
-            topK: 1,
-            topP: 1,
-            maxOutputTokens: 2048,
-          },
-          safetySettings: [
-            {
-              category: "HARM_CATEGORY_HARASSMENT",
-              threshold: "BLOCK_MEDIUM_AND_ABOVE"
-            },
-            {
-              category: "HARM_CATEGORY_HATE_SPEECH",
-              threshold: "BLOCK_MEDIUM_AND_ABOVE"
-            },
-            {
-              category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-              threshold: "BLOCK_MEDIUM_AND_ABOVE"
-            },
-            {
-              category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-              threshold: "BLOCK_MEDIUM_AND_ABOVE"
-            }
-          ]
+  try {
+    const response = await axios.post(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${this.geminiKey}`,
+      {
+        contents: [
+          {
+            role: "user",
+            parts: [
+              {
+                text: `You are a helpful AI programming assistant.
+Provide clear, concise, and practical answers.
+Format code with proper syntax highlighting.
+
+${prompt}`
+              }
+            ]
+          }
+        ],
+        generationConfig: {
+          temperature: 0.7,
+          topK: 40,
+          topP: 0.95,
+          maxOutputTokens: 2048
         },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
+        safetySettings: [
+          { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+          { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+          { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+          { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" }
+        ]
+      },
+      {
+        headers: {
+          "Content-Type": "application/json"
         }
-      );
-
-      if (response.data.candidates && response.data.candidates.length > 0) {
-        return response.data.candidates[0].content.parts[0].text;
-      } else {
-        throw new Error('No response generated from Gemini API');
       }
-    } catch (error) {
-      console.error(chalk.red('Gemini API Error:'), error.response?.data || error.message);
-      throw error;
-    }
-  }
+    );
 
+    const candidate = response.data?.candidates?.[0];
+    if (!candidate) {
+      throw new Error("No response generated from Gemini API");
+    }
+
+    return candidate.content.parts.map(p => p.text).join("");
+  } catch (error) {
+    console.error(
+      chalk.red("Gemini API Error:"),
+      error.response?.data || error.message
+    );
+    throw error;
+  }
+}
 }
 
 module.exports = new AIService();
