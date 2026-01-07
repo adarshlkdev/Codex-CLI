@@ -1,4 +1,4 @@
-# 🚀 AI Codex CLI - Your AI Dev Companion
+# 🚀 AI Codex CLI
 
 A powerful command-line interface that brings AI assistance directly to your terminal. Get instant help with coding concepts, debugging, code generation, and more!
 
